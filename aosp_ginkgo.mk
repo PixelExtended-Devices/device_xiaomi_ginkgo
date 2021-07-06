@@ -23,17 +23,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common Evolution X stuff
+# Inherit some common AOSP stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_PIXEL_CHARGER := true
-EVO_BUILD_TYPE := OFFICIAL
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_GAPPS_ARCH := arm64
 TARGET_FACE_UNLOCK_SUPPORTED := true
 WITH_GAPPS := true
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
+# Pixel Extended OFFICIAL Build Stuff
+PEX_BUILD_TYPE := OFFICIAL
+PEX_MAINTAINER :=  Anupam
 # Device identifier
-PRODUCT_NAME := evolution_ginkgo
+PRODUCT_NAME := aosp_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
