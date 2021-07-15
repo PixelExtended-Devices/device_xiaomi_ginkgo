@@ -30,7 +30,7 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_GAPPS_ARCH := arm64
 TARGET_FACE_UNLOCK_SUPPORTED := true
 WITH_GAPPS := true
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Pixel Extended OFFICIAL Build Stuff
 PEX_BUILD_TYPE := OFFICIAL
