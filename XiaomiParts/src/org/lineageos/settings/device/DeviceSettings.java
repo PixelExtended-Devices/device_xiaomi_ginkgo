@@ -24,6 +24,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
 import org.lineageos.settings.device.kcal.KCalSettingsActivity;
+import org.lineageos.settings.device.display.LcdFeaturesPreferenceActivity;
 import org.lineageos.settings.device.preferences.CustomSeekBarPreference;
 import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
@@ -44,6 +45,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
     private static final String PREF_DEVICE_KCAL = "device_kcal";
+    private static final String PREF_LCD_FEATURES = "lcd_features_settings";
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
@@ -60,6 +62,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final int MAX_VIBRATION = 3544;
 
     private Preference mClearSpeakerPref;
+    private Preference mLcdFeaturesPref;
     private SecureSettingSwitchPreference mFastcharge;
 
     @Override
@@ -102,6 +105,13 @@ public class DeviceSettings extends PreferenceFragment implements
             startActivity(intent);
             return true;
         });
+        
+        mLcdFeaturesPref = (Preference) findPreference(PREF_LCD_FEATURES);
+        mLcdFeaturesPref.setOnPreferenceClickListener(preference -> {
+        	Intent intent = new Intent(getActivity().getApplicationContext(), LcdFeaturesPreferenceActivity.class);
+        	startActivity(intent);
+        	return true;
+        });	
 
         mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.setOnPreferenceClickListener(preference -> {
