@@ -48,4 +48,7 @@
     <!-- PEX Maintainer -->
     <string name="pex_maintainer_name" translatable="false">GioKas93</string>
     <string name="pex_maintainer_group" translatable="false">https://t.me/pexginkowillow</string>
+
+    <!-- Whether memory from app_info_settings is available or not. -->
+    <bool name="config_show_app_info_settings_memory">true</bool>
 </resources>
